@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Generating Freeform Endoskeletal Robots</title>
+<meta name="description" content="Abstract">
+<link rel="stylesheet" href="css/style.css">
+<link rel="canonical" href="">
+<link rel="shortcut icon" href="assets/images/teaser.png"> 
+</head>
+<body>
+
+<main>
+<article class="project">
+<div class="cover">
+<div class="wrapper">
+<h1>Generating Freeform Endoskeletal Robots</h1>
+<span class="author">
+    <a target="_blank" href="https://endoskeletal.github.io/">Anonymous Authors</a>
+</span> 
+<p class="buttons">
+    <a href="https://openreview.net/forum?id=awvJBtB2op" target="_blank">Paper</a>
+    <a href="https://github.com/endoskeletal/rise-gen" target="_blank">Code</a>
+</p>
+</div>
+</div>
+
+<!-- <p style="text-align: center">
+    <img style="width: 100%" src="assets/images/teaser.png" />
+</p> -->
+<video autoplay loop muted controls>
+    <source src="assets/videos/xray.mp4" type="video/mp4" />
+</video>
+
+<div class="content wrapper">
+
+<h2 id="abstract">Abstract</h2>
+<p> 
+The automatic design of embodied agents (e.g. robots) has existed for 31 years and is experiencing a renaissance of interest in the literature. To date however, the field has remained narrowly focused on two kinds of anatomically simple robots: (1) fully rigid, jointed bodies; and (2) fully soft, jointless bodies. Here we bridge these two extremes with the open ended creation of terrestrial endoskeletal robots: deformable soft bodies that leverage jointed internal skeletons to move efficiently across land. Simultaneous de novo generation of external and internal structures is achieved by (i) modeling 3D endoskeletal body plans as integrated collections of elastic and rigid cells that directly attach to form soft tissues anchored to compound rigid bodies; (ii) encoding these discrete mechanical subsystems into a continuous yet coherent latent embedding; (iii) optimizing the sensorimotor coordination of each decoded design using model-free reinforcement learning; and (iv) navigating this smooth yet highly non-convex latent manifold using evolutionary strategies. This yields an endless stream of novel species of ``higher robots'' that, like all higher animals, harness the mechanical advantages of both elastic tissues and skeletal levers for terrestrial travel. It also provides a plug-and-play experimental platform for benchmarking evolutionary design and representation learning algorithms in complex hierarchical embodied systems.
+</p>
+<h2 id="methology">Methology</h2>
+<p style="text-align: center">
+    <img style="width: 100%" src="assets/images/pipeline.png" />
+</p>
+<div class="detail">
+    <section class="project-details">
+        <p><strong>Simulation Platform:</strong> We built a voxel-based simulation platform that enables two-way coupling between flexible (soft) and rigid components of the robots.</p>
+        <p><strong>Encoding Morphology:</strong> A variational autoencoder (VAE) was used to generate and optimize robot structures, encoding valid designs into a 512-dimensional latent space.</p>
+        <p style="text-align: center">
+            <img style="width: 70%" src="assets/images/latent_interp.jpg" />
+        </p>
+        <p><strong>Control Mechanism:</strong> We built a universal controller using a graph transformer, which aligns the robot’s proprioceptive sensory input from voxels with its skeletal graph sensor inputs.</p>
+        <p style="text-align: center">
+            <img style="width: 100%" src="assets/images/RL.png" />
+        </p>
+        <p><strong>Optimization Process:</strong> Designs were optimized using Proximal Policy Optimization (PPO) within a reinforcement learning framework, while evolutionary strategies (CMA-ES) iteratively improved designs based on fitness scores.</p>
+        <p><strong>Task Environments and Adaptation:</strong> Robots were tested in diverse task environments (e.g., flat ground, potholes, mountain ranges) to evolve designs that could overcome complex obstacles.</p>
+    </section>
+</div>
+
+<h2 id="more">Manipulation Task</h2>
+<div class="detail">
+    <video autoplay loop muted controls>
+        <source src="assets/videos/manipulation.mp4" type="video/mp4" />
+    </video>
+</div>
+
+</html>
