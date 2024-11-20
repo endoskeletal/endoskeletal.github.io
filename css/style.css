@@ -113,3 +113,33 @@
   flex-direction: column;
   gap: 5px;
 }
+.video-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.video-column {
+  flex: 1;
+  max-width: calc(50% - 5px);
+}
+
+.video-column video {
+width: 100%;
+}
+
+.caption {
+  text-align: center;
+  margin-top: 2.5px;
+}
+
+.video-column video {
+  width: 100%;
+  height: 100%; 
+  object-fit: cover;
+}
+
+.video-row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 22px; 
+}
